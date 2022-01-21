@@ -1,0 +1,12 @@
+version: '3'
+services:
+  blue_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "13579:13579"
+    links:
+      - blue_redis
+  blue_redis:
+    image: "redis:latest"
